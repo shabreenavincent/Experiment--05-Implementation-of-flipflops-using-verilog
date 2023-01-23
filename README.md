@@ -101,24 +101,231 @@ From the above characteristic table, we can directly write the next state equati
 Q(t+1)=T′Q(t)+TQ(t)′
 ⇒Q(t+1)=T⊕Q(t)
 
-### Procedure
-/* write all the steps invloved */
+DEVELOPED BY : M.ABINAYA
+
+REGISTER NO : 22008642
+
+Procedure write all the steps invloved
+
+1.Open Quartus II and select new project and choose the file location.
+
+2.Module Declaration. Module should have the file name.
+
+3.Declare Inputs and outputs.
+
+4.Use assign declaration and wire to define the functionality of logic circuits.
+
+5.End the program with endmodule.
+
+6.Run the program and choose RTL viewer to get RTL realization.
+
+PROGRAM Program for flipflops and verify its truth table in quartus using Verilog programming.
+
+SR FLIPFLOP
+
+module SR(S,R,clk,Q,Qbar);
+
+input S,R,clk;
+
+output Q,Qbar;
+
+wire X,Y;
+
+nand (X,S,clk);
+
+nand (Y,R,clk);
+
+nand (Q,X,Qbar);
+
+nand (Qbar,Y,Q);
+
+endmodule
+
+JK FLIPFLOP
+
+module JK(J,K,clk,Q,Qbar);
+
+input J,K,clk;
+
+output Q,Qbar;
+
+wire X,Y;
+
+nand (X,J,clk,Qbar);
+
+nand (Y,K,clk,Q);
+
+nand (Q,X,Qbar);
+
+nand (Qbar,Y,Q);
+
+endmodule
+
+D FLIPFLOP
+
+module DF(D,clk,Q,Qbar);
+
+input D,clk;
+
+output Q,Qbar;
+
+assign Dbar=~D;
+
+wire X,Y;
+
+nand (X,D,clk);
+
+nand (Y,Dbar,clk);
+
+nand (Q,X,Qbar);
+
+nand (Qbar,Y,Q);
+
+endmodule
+
+T FLIPFLOP
+
+module TF(T,clk,Q,Qbar);
+
+input T,clk;
+
+output Q,Qbar;
+
+wire S,R;
+
+nand (S,T,clk,Qbar);
+
+nand (R,T,clk,Q);
+
+nand (Q,S,Qbar):
+
+nand (Qbar,R,Q);
+
+endmodule
+
+RTL LOGIC FOR FLIPFLOPS
+
+SR FLIPFLOP
 
 
 
-### PROGRAM 
-/*
-Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+
+![program ](https://user-images.githubusercontent.com/119475721/214057391-7b6fa1ac-acc9-4e63-8248-bbfa70f81ca9.png)
+
+
+
+JK FLIPFLOP
 
 
 
 
 
 
-### RTL LOGIC FOR FLIPFLOPS 
+![jk](https://user-images.githubusercontent.com/119475721/214057770-7a00e43e-7ac8-4520-9318-1dd0c7a126ad.png)
+
+
+
+D FLIPFLOP
+
+
+
+
+
+
+![d flip flop](https://user-images.githubusercontent.com/119475721/214058086-32110caa-780c-4c51-9d45-061f520d2fde.png)
+
+
+
+
+
+T FLIP FLOP
+
+
+
+![t flipflop](https://user-images.githubusercontent.com/119475721/214058376-ee3fa05c-8e04-44b4-a948-8dab828b0883.png)
+
+
+
+
+TIMING DIGRAMS FOR FLIP FLOPS
+
+SR FLIPFLOP
+
+
+
+
+![sr flipflop](https://user-images.githubusercontent.com/119475721/214058654-2909a665-94ab-46d6-991e-ac01d71bd86b.png)
+
+
+
+
+
+
+JK FLIPFLOP
+
+
+
+
+
+![jkflipflop](https://user-images.githubusercontent.com/119475721/214059349-9b14c6da-04f7-4d3d-91f5-8dd535570b3d.png)
+
+
+D FLIPFLOP
+
+
+
+![d](https://user-images.githubusercontent.com/119475721/214059690-21a91ac3-94ed-4e78-bb46-d5bbc7781234.png)
+
+
+
+T FLIP FLOP
+![t](https://user-images.githubusercontent.com/119475721/214060140-8b9958e7-4a8b-4895-906d-995043327f88.png)
+
+
+
+
+TIMING DIGRAMS FOR FLIP FLOPS
+
+SR FLIPFLOP
+
+
+
+![sr](https://user-images.githubusercontent.com/119475721/214060427-1e827f5a-fe7d-4b94-8b6b-f351de7e53a9.png)
+
+
+
+JK FLIPFLOP
+
+
+
+
+![jk flipflop](https://user-images.githubusercontent.com/119475721/214060797-471419d7-0de5-4170-be5a-bb12d38164e1.png)
+
+
+
+
+
+D FLIPFLOP
+
+
+
+
+
+
+![d](https://user-images.githubusercontent.com/119475721/214061100-fcf3e388-09b9-45cb-ac7d-3a7dd7ba2bbd.png)
+
+
+
+T FLIPFLOP
+
+
+
+![dflip](https://user-images.githubusercontent.com/119475721/214061444-c4e05449-d734-4bde-bfe7-4e6328990c73.png)
+
+
+
+
+RESULT: Thus the program for flipflops is implemented and its functional table is successfully verified in quartus using verilog programming
 
 
 
@@ -128,7 +335,6 @@ RegisterNumber:
 
 
 
-### TIMING DIGRAMS FOR FLIP FLOPS 
 
 
 
@@ -137,4 +343,3 @@ RegisterNumber:
 
 
 
-### RESULTS 
